@@ -59,7 +59,4 @@ add these VM arguments:
 
 ## Author
 
-- nguyenlm - Software Engeneering Student - k61
-- manhvd - Software Engeneering Student - k61
-- hieudm - ICT - k61
-- vunt - IT1 - K65
+Nhom 17
