@@ -26,6 +26,7 @@ public class PlaceOrderController extends BaseController {
      *
      * @throws SQLException
      */
+    //content coupling
     public void placeOrder() throws SQLException {
         Cart.getCart().checkAvailabilityOfProduct();
     }
@@ -36,6 +37,7 @@ public class PlaceOrderController extends BaseController {
      * @return Order
      * @throws SQLException
      */
+    //common coupling
     public Order createOrder() throws SQLException {
         Order order = new Order();
         for (Object object : Cart.getCart().getListMedia()) {
@@ -54,6 +56,7 @@ public class PlaceOrderController extends BaseController {
      * @param order
      * @return Invoice
      */
+    //controller coupling
     public Invoice createInvoice(Order order) {
 
         order.createOrderEntity();
@@ -67,6 +70,7 @@ public class PlaceOrderController extends BaseController {
      * @throws InterruptedException
      * @throws IOException
      */
+    //content coupling
     public void processDeliveryInfo(HashMap info) throws InterruptedException, IOException {
         validateDeliveryInfo(info);
     }
@@ -78,6 +82,7 @@ public class PlaceOrderController extends BaseController {
      * @throws InterruptedException
      * @throws IOException
      */
+    //content coupling
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException {
 
     }
@@ -139,6 +144,7 @@ public class PlaceOrderController extends BaseController {
      * @return media
      * @throws SQLException
      */
+    //content coupling
     public Media getProductAvailablePlaceRush(Order order) throws SQLException {
         Media media = new Media();
         for (OrderMedia pd : order.getlstOrderMedia()) {
@@ -168,6 +174,7 @@ public class PlaceOrderController extends BaseController {
     /**
      * @return boolean
      */
+    //common coupling
     public boolean validateMediaPlaceRushorder() {
         if (Media.getIsSupportedPlaceRushOrder())
             return true;
