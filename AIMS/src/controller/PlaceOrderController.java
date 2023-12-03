@@ -67,6 +67,7 @@ public class PlaceOrderController extends BaseController {
      * @throws InterruptedException
      * @throws IOException
      */
+    //content coupling
     public void processDeliveryInfo(HashMap info) throws InterruptedException, IOException {
         validateDeliveryInfo(info);
     }
@@ -78,6 +79,7 @@ public class PlaceOrderController extends BaseController {
      * @throws InterruptedException
      * @throws IOException
      */
+    //content coupling
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException {
 
     }
@@ -139,12 +141,13 @@ public class PlaceOrderController extends BaseController {
      * @return media
      * @throws SQLException
      */
+    //Stamp && content coupling
     public Media getProductAvailablePlaceRush(Order order) throws SQLException {
         Media media = new Media();
         for (OrderMedia pd : order.getlstOrderMedia()) {
             // CartMedia cartMedia = (CartMedia) object;
-            if( validateMediaPlaceRushorder()){
-                media = pd.getMedia();
+            if( validateMediaPlaceRushorder()){ // This method call indicates stamp coupling.
+                media = pd.getMedia();// This line indicates content coupling.
             }
         }
         return media;
@@ -168,8 +171,9 @@ public class PlaceOrderController extends BaseController {
     /**
      * @return boolean
      */
+    //Stamp coupling
     public boolean validateMediaPlaceRushorder() {
-        if (Media.getIsSupportedPlaceRushOrder())
+        if (Media.getIsSupportedPlaceRushOrder()) //// This static method call indicates stamp coupling.
             return true;
         return false;
     }
