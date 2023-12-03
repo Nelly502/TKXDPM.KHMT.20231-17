@@ -20,7 +20,8 @@ import java.util.Map;
  */
 
     //-CONTENT COUPLING:
-    // Class PaymentController có sử dụng các ngoại lệ như PaymentException, TransactionNotDoneException, và UnrecognizedException. 
+    // Class PaymentController có sử dụng các ngoại lệ như PaymentException, TransactionNotDoneException, 
+    //và UnrecognizedException. 
     // Điều này là một dạng của content coupling vì nó yêu cầu PaymentController biết và phụ thuộc 
     // vào các chi tiết cụ thể về ngoại lệ từ gói common.exception.
      
