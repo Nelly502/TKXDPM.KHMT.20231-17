@@ -1,62 +1,237 @@
-# An Internet Media Store
+# TKXDPM.VN.20231-17
 
-<p align="center">
-  <img src="assets/images/aims_cover_image.png" />
-</p>
+## Team member
 
-## Getting Started
+| Name                  | Role        |
+| :---------------------| :---------- |
+| Phạm Thị Phương Nga   | Team Leader |
+| Phạm Thị Kim Ngân     | Member      |
+| Đỗ Minh Nghĩa         | Member      |
+| Đoàn Đình Phúc        | Member      |
 
-Welcome to the AIMS project. Here is a guideline to help you get started.
+## Report Content
 
-## Folder Structure
+<details>
+  <summary>W13: 27/12/2023~03/12/2023 </summary>
+<br>
+<details>
+<summary>Team Leader Pham Thi Phuong Nga</summary>
+<br>
 
-The workspace contains the following folders, where:
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-- `assets`: the folder to maintain static resources
-- `test`: the folder for testing purpose
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
-## Dependency Management
+</details>
 
-### Working with Eclipse
+<details>
+<summary>Team member Pham Thi Kim Ngan</summary>
+<br>
 
-Import the root directory of this repository after cloning under `Eclipse` -> `Open Projects from File System...` or by
-using EGit.
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
 
-### SQLite
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
-Import `sqlite-jdbc-3.7.2.jar` in `lib`
-under `Eclipse` -> `Project` -> `Properties` -> `Java Build Path` -> `Classpath` -> `Add JARs...`.
+</details>
 
-### JUnit
+<details>
+<summary>Team member Do Minh Nghia</summary>
+<br>
 
-Import `JUnit5` library
-under `Eclipse` -> `Project` -> `Properties` -> `Java Build Path` -> `Modulepath` -> `Add Library...` -> `JUnit` -> `Next`.
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
 
-### JavaFX
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
-**Note:** At first, please try to run the project once, and then follow these steps.
+</details>
 
-1. Create a new `User Library`
-   under `Eclipse` -> `Window` -> `Preferences` -> `Java` -> `Build Path` -> `User Libraries` -> `New`
-2. Name it anything you want, e.g., `JavaFX15`, and include the ***jars*** under either the `lib/linux/javafx-sdk-15`
-   directory for Linux distro or the `lib/win/javafx-sdk-15` directory for Windows in the project.
-3. Include the library, e.g., `JavaFX15`, into the classpath.
+<details>
+<summary>Team member Doan Dinh Phuc</summary>
+<br>
 
-### Add VM arguments
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
 
-Click on `Run` -> `Run Configurations...`  -> `Java Application`, create a new launch configuration for your project and
-add these VM arguments:
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
-- For Linux distro:
+</details>
 
-> `--module-path lib/linux/javafx-sdk-15/lib --add-modules=javafx.controls,javafx.fxml,javafx.base,javafx.web`
+</details>
 
-- For Windows:
+---
+<details>
+  <summary>W14: 4/12/2023~11/12/2023 </summary>
+<br>
+<details>
+<summary>Team Leader Pham Thi Phuong Nga</summary>
+<br>
 
-> `--module-path lib/win/javafx-sdk-15/lib --add-modules=javafx.controls,javafx.fxml,javafx.base,javafx.web`
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
 
-## Author
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
-Nhom 17
+</details>
+
+<details>
+<summary>Team member Pham Thi Kim Ngan</summary>
+<br>
+
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
+
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+
+</details>
+
+<details>
+<summary>Team member Do Minh Nghia</summary>
+<br>
+
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
+
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+
+</details>
+
+<details>
+<summary>Team member Doan Dinh Phuc</summary>
+<br>
+
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
+
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+
+</details>
+
+</details>
+
+---
+<details>
+  <summary>W15: 11/12/2023~18/12/2023 </summary>
+<br>
+<details>
+<summary>Team Leader Pham Thi Phuong Nga</summary>
+<br>
+
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
+
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+
+</details>
+
+<details>
+<summary>Team member Pham Thi Kim Ngan</summary>
+<br>
+
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
+
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+
+</details>
+
+<details>
+<summary>Team member Do Minh Nghia</summary>
+<br>
+
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
+
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+
+</details>
+
+<details>
+<summary>Team member Doan Dinh Phuc</summary>
+<br>
+
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
+
+- Implementation details:
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+
+</details>
+
+</details>
+
+---
+
+
