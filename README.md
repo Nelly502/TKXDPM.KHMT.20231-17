@@ -60,7 +60,7 @@
   - HomeController
 
 - Implementation details:
-  - Pull Request(s): [link pull request](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/commit/c57dd55e361870411bff8d7cc12aa9be0633eac9)
+  - Pull Request(s): [link pull request](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/8)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
