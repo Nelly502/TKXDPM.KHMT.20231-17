@@ -19,13 +19,12 @@
 <br>
 
 - Assigned tasks:
-
-  - Task 1
-  - Task 2
-  - ...
+Comment coupling in
+  - PlaceRushOrderController
+  - ViewCartController
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [Pull Request #2](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/2)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
@@ -74,13 +73,15 @@
 
 - Assigned tasks:
 
-  - Find coupling in Place Order controller and VnPaySubsystem
-  - Comment that
+  - Task 1
+  - Task 2
+  - ...
 
 - Implementation details:
-  - Pull Request(s): https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/4
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
   - Specific implementation details:
-    - Find couping function 
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
 </details>
 
@@ -230,12 +231,16 @@
 
 - Assigned tasks:
 
-  - Find coupling in Place Order Controller and VnPaySubsystem
+  - Task 1
+  - Task 2
+  - ...
 
 - Implementation details:
-  - Pull Request(s): https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/4
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
   - Specific implementation details:
-    - Find coupling and comment on top of that function
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+
 </details>
 
 </details>
