@@ -16,8 +16,24 @@ import java.util.Map;
  * This {@code PaymentController} class control the flow of the payment process
  * in our AIMS Software.
  *
- * @author hieud
+ * @author 
  */
+
+    //-CONTENT COUPLING:
+    // Class PaymentController có sử dụng các ngoại lệ như PaymentException, TransactionNotDoneException, và UnrecognizedException. 
+    // Điều này là một dạng của content coupling vì nó yêu cầu PaymentController biết và phụ thuộc 
+    // vào các chi tiết cụ thể về ngoại lệ từ gói common.exception.
+     
+    //-CONTROL COUPING:
+    //Có một phương thức makePayment trong PaymentController mà sử dụng một interface VnPayInterface 
+    //và "makePaymentTransaction" từ vnPayService.
+    // Điều này tạo ra sự phụ thuộc kiểm soát giữa PaymentController và VnPaySubsystem
+    
+    //-DATA COUPLING:
+    //Phương thức makePayment sử dụng một Map<String, String> để truyền dữ liệu giữa các thành phần. 
+    //Điều này là một mức độ data coupling, nhưng không phải là mức độ cao vì nó chỉ sử dụng một đối 
+    //tượng dữ liệu chung.
+
 public class PaymentController extends BaseController {
 
 
@@ -71,6 +87,7 @@ public class PaymentController extends BaseController {
 //   * @return {@link java.util.Map Map} represent the payment result with a
 //   *         message.
 //   */
+
     public Map<String, String> makePayment(Map<String, String> res, int orderId) {
         Map<String, String> result = new Hashtable<String, String>();
 
