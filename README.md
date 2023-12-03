@@ -53,7 +53,7 @@ Comment coupling in
   - HomeController
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [link pull request](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/8)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
