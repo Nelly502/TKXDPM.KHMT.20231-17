@@ -40,7 +40,7 @@
   - Phát hiện coupling với file PaymentController.java, VNPaySubsystemController.java
 
 - Chi tiết:
-  - Pull Request(s): [Pull request Pham Thi Kim Ngan](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/3/)
+  - Pull Request(s): [Pull request Pham Thi Kim Ngan](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/6)
 
 </details>
 
