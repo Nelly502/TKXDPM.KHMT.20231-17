@@ -19,10 +19,9 @@
 <br>
 
 - Assigned tasks:
-
-  - Task 1
-  - Task 2
-  - ...
+Comment coupling in
+  - PlaceRushOrderController
+  - ViewCartController
 
 - Implementation details:
   - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
