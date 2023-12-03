@@ -2,23 +2,24 @@
 
 ## Team member
 
-| Name                  | Role        |
-| :---------------------| :---------- |
-| Phạm Thị Phương Nga   | Team Leader |
-| Phạm Thị Kim Ngân     | Member      |
-| Đỗ Minh Nghĩa         | Member      |
-| Đoàn Đình Phúc        | Member      |
+| Name                | Role        |
+| :------------------ | :---------- |
+| Phạm Thị Phương Nga | Team Leader |
+| Phạm Thị Kim Ngân   | Member      |
+| Đỗ Minh Nghĩa       | Member      |
+| Đoàn Đình Phúc      | Member      |
 
 ## Report Content
 
 <details>
-  <summary>W13: 27/12/2023~03/12/2023 </summary>
+  <summary>W13: 27/11/2023~03/12/2023 </summary>
 <br>
 <details>
 <summary>Team Leader Pham Thi Phuong Nga</summary>
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -36,6 +37,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -53,6 +55,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -70,6 +73,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -85,6 +89,7 @@
 </details>
 
 ---
+
 <details>
   <summary>W14: 4/12/2023~11/12/2023 </summary>
 <br>
@@ -93,6 +98,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -110,6 +116,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -127,6 +134,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -144,6 +152,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -159,6 +168,7 @@
 </details>
 
 ---
+
 <details>
   <summary>W15: 11/12/2023~18/12/2023 </summary>
 <br>
@@ -167,6 +177,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -184,6 +195,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -201,6 +213,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -218,6 +231,7 @@
 <br>
 
 - Assigned tasks:
+
   - Task 1
   - Task 2
   - ...
@@ -233,5 +247,3 @@
 </details>
 
 ---
-
-
