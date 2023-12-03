@@ -56,7 +56,7 @@
 
 - Assigned tasks:
 
-  - BaseControlle
+  - BaseController
   - HomeController
 
 - Implementation details:
