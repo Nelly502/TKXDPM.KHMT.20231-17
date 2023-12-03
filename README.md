@@ -24,7 +24,7 @@ Comment coupling in
   - ViewCartController
 
 - Implementation details:
-  - Pull Request(s): [https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/2]()
+  - Pull Request(s): [Pull Request #2](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/2)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
