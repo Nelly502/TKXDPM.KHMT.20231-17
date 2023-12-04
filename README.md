@@ -146,7 +146,7 @@ Comment coupling in
   Comment cohesion in Place Order Controller and VNPaySubsystem
 
 - Implementation details:
-  - Pull Request(s): https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pulls
+  - Pull Request(s): [12](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/12)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
