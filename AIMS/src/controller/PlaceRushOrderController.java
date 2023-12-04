@@ -21,6 +21,10 @@ public class PlaceRushOrderController extends BaseController {
      * @param deliveryData
      * @param typeDelivery
      */
+
+    /**data coupling
+     Phương thức validatePlaceRushOrderData thực hiện kiểm tra dữ liệu trong đối tượng Shipment.
+     Mức độ phụ thuộc chỉ dựa trên dữ liệu được truyền vào. */
     public static void validatePlaceRushOrderData(Shipment deliveryData) {
         if (deliveryData.getShipType() == utils.Configs.PLACE_RUSH_ORDER) {
            // validate

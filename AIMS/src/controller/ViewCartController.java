@@ -16,6 +16,11 @@ public class ViewCartController extends BaseController {
      *
      * @throws SQLException
      */
+    /** control coupling
+     Phương thức checkAvailabilityOfProduct trong ViewCartController
+     kiểm soát luồng thực thi của phương thức checkAvailabilityOfProduct trong lớp Cart */
+    /** data coupling
+     Phương thức này chỉ gọi các phương thức của lớp Cart thông qua việc truyền dữ liệu */
     public void checkAvailabilityOfProduct() throws SQLException {
         Cart.getCart().checkAvailabilityOfProduct();
     }
@@ -25,6 +30,8 @@ public class ViewCartController extends BaseController {
      *
      * @return subtotal
      */
+    /** data coupling
+     Phương thức getCartSubtotal chỉ gọi các phương thức của lớp Cart thông qua việc truyền dữ liệu */
     public int getCartSubtotal() {
         int subtotal = Cart.getCart().calSubtotal();
         return subtotal;

@@ -19,13 +19,12 @@
 <br>
 
 - Assigned tasks:
-
-  - Task 1
-  - Task 2
-  - ...
+Comment coupling in
+  - PlaceRushOrderController
+  - ViewCartController
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [Pull Request #2](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/2)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
@@ -40,7 +39,7 @@
   - Phát hiện coupling với file PaymentController.java, VNPaySubsystemController.java
 
 - Chi tiết:
-  - Pull Request(s): [Pull request Pham Thi Kim Ngan](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/3/)
+  - Pull Request(s): [Pull request Pham Thi Kim Ngan](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/6)
 
 </details>
 
@@ -50,12 +49,11 @@
 
 - Assigned tasks:
 
-  - Task 1
-  - Task 2
-  - ...
+  - BaseController
+  - HomeController
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [link pull request](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/8)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
@@ -68,12 +66,10 @@
 
 - Assigned tasks:
 
-  - Task 1
-  - Task 2
-  - ...
+  - Find coupling in Place order controller and VnPaySubsystem
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/4
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want

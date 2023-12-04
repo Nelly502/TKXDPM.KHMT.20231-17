@@ -31,6 +31,7 @@ public class VnPaySubsystem implements VnPayInterface {
      * Initializes a newly created {@code InterbankSubsystem} object so that it
      * represents an Interbank subsystem.
      */
+    //Stamp Coupling:
     public VnPaySubsystem() {
         this.ctrl = new VnPaySubsystemController();
     }
@@ -39,6 +40,7 @@ public class VnPaySubsystem implements VnPayInterface {
      * @see VnPayInterface#payOrder(entity.payment.CreditCard, int,
      * java.lang.String)
      */
+    //Content Coupling
     public String generatePayUrl(int amount, String contents) {
 
         try {
@@ -47,7 +49,7 @@ public class VnPaySubsystem implements VnPayInterface {
             throw new RuntimeException(e);
         }
     }
-
+    //Content Coupling
     public PaymentTransaction makePaymentTransaction(Map<String, String> response) throws ParseException {
             return ctrl.makePaymentTransaction(response);
     }
