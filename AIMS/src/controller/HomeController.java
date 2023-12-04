@@ -19,6 +19,7 @@ public class HomeController extends BaseController {
      * @throws SQLException
      */
     //Content Coupling
+    //Functional Cohesion: This method has functional cohesion as it performs a specific function
     public List getAllMedia() throws SQLException {
         return new Media().getAllMedia();
     }
