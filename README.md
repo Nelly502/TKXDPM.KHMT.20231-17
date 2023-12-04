@@ -143,12 +143,10 @@ Comment coupling in
 
 - Assigned tasks:
 
-  - Task 1
-  - Task 2
-  - ...
+  Comment cohesion in Place Order Controller and VNPaySubsystem
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pulls
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
