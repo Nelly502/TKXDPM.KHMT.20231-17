@@ -105,17 +105,11 @@ Comment coupling in
 <summary>Team member Pham Thi Kim Ngan</summary>
 <br>
 
-- Assigned tasks:
+- Nhiệm vụ được giao:
+  -Phân tích cohesion có trong file PaymentController.java, VnPaySubsystemController.java
 
-  - Task 1
-  - Task 2
-  - ...
-
-- Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+- Chi tiết:
+  - Pull Request(s): [pull request cohesion phamkimngan]()
 
 </details>
 
