@@ -89,12 +89,12 @@ Comment coupling in
 
 - Assigned tasks:
 
-  - Task 1
-  - Task 2
-  - ...
+  Comment cohesion in
+  - PlaceRushOrderController
+  - ViewCartController
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [Pull Requests 10](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/10)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
@@ -105,17 +105,11 @@ Comment coupling in
 <summary>Team member Pham Thi Kim Ngan</summary>
 <br>
 
-- Assigned tasks:
+- Nhiệm vụ được giao:
+  -Phân tích cohesion có trong file PaymentController.java, VnPaySubsystemController.java
 
-  - Task 1
-  - Task 2
-  - ...
-
-- Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+- Chi tiết:
+  - Pull Request(s): [pull request cohesion phamkimngan](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/15)
 
 </details>
 
@@ -123,14 +117,13 @@ Comment coupling in
 <summary>Team member Do Minh Nghia</summary>
 <br>
 
-- Assigned tasks:
+- Comment Cohesion :
 
-  - Task 1
-  - Task 2
-  - ...
+  - BaseController
+  - HomeController
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [link pull requests](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/14)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
@@ -143,12 +136,10 @@ Comment coupling in
 
 - Assigned tasks:
 
-  - Task 1
-  - Task 2
-  - ...
+  Comment cohesion in Place Order Controller and VNPaySubsystem
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [12](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/12)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want

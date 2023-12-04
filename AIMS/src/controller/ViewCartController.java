@@ -9,6 +9,11 @@ import java.sql.SQLException;
  *
  * @author nguyenlm
  */
+
+/**
+ * Functional cohesion vì thực hiện một chức năng cụ thể liên quan đến xem giỏ hàng.
+ * Communicational cohesion do có sự truyền đối tượng Cart làm tham số trong các phương thức.
+ */
 public class ViewCartController extends BaseController {
 
     /**
