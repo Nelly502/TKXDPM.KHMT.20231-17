@@ -109,7 +109,7 @@ Comment coupling in
   -Phân tích cohesion có trong file PaymentController.java, VnPaySubsystemController.java
 
 - Chi tiết:
-  - Pull Request(s): [pull request cohesion phamkimngan]()
+  - Pull Request(s): [pull request cohesion phamkimngan](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/15)
 
 </details>
 
