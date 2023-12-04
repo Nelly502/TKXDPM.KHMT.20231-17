@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import javax.xml.crypto.Data;
-
+//FUNCTIONAL COHESION
 public class VnPaySubsystemController {
     
     
