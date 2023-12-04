@@ -18,7 +18,7 @@ import java.util.Map;
  *
  * @author 
  */
-
+    //FIUNCTION COHESION
     //-CONTENT COUPLING:
     // Class PaymentController có sử dụng các ngoại lệ như PaymentException, TransactionNotDoneException, 
     //và UnrecognizedException. 
