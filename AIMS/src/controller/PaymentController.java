@@ -35,6 +35,17 @@ import java.util.Map;
     //Điều này là một mức độ data coupling, nhưng không phải là mức độ cao vì nó chỉ sử dụng một đối 
     //tượng dữ liệu chung.
 
+/**
+ * Vi phạm Single Responsibility Principle (SRP):
+ * Lớp PaymentController đang thực hiện nhiều nhiệm vụ,
+ * bao gồm việc xử lý thanh toán, tạo URL thanh toán, và xóa giỏ hàng.
+ */
+
+/**
+ * Vi phạm  Dependency Inversion Principle (DIP):
+ * Lớp PaymentController tạo mới một đối tượng VnPaySubsystem bên trong phương thức,
+ * điều này làm cho lớp trở nên cứng nhắc và khó tái sử dụng.
+ */
 public class PaymentController extends BaseController {
 
 

@@ -13,6 +13,11 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.logging.Logger;
 
+
+/** Vi phạm Dependency Inversion Principle (DIP):
+ * Lớp PlaceOrderController trực tiếp phụ thuộc vào Cart, Order, và Media, thậm chí còn gọi đến các
+ * phương thức tĩnh của Media. Điều này làm cho lớp trở nên cứng nhắc và khó kiểm thử.
+ */
 public class PlaceOrderController extends BaseController {
 
     /**
@@ -23,6 +28,10 @@ public class PlaceOrderController extends BaseController {
     /**
      * This method checks the avalibility of product when user click PlaceOrder
      * button
+     *
+     * @throws SQLException
+     */
+    /**
      *
      * @throws SQLException
      */
