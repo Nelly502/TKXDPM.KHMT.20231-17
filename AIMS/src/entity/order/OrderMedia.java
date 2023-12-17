@@ -7,7 +7,7 @@ public class OrderMedia {
     private Media media;
     private int price;
     private int quantity;
-
+    //Media, quantity, price đang được dùng bên ngoài lớp, nên thêm các hành động cụ thể cho chúng
     public OrderMedia(Media media, int quantity, int price) {
         this.media = media;
         this.quantity = quantity;
@@ -18,6 +18,7 @@ public class OrderMedia {
     /**
      * @return String
      */
+    //Cần hiển thị rõ ràng hơn về đối tượng OrderMedia
     @Override
     public String toString() {
         return "{" +
