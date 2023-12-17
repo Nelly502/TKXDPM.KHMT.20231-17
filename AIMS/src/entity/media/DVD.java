@@ -175,6 +175,8 @@ public class DVD extends Media {
      * @throws SQLException
      */
     @Override
+    //The Single Responsibility Principle
+    //The Dependency Inversion Principle
     public Media getMediaById(int id) throws SQLException {
         String sql = "SELECT * FROM " +
                 "aims.DVD " +
