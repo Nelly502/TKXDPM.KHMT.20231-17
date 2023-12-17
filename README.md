@@ -193,14 +193,14 @@ Comment coupling in
 <summary>Team member Do Minh Nghia</summary>
 <br>
 
-- Assigned tasks:
-
-  - Task 1
-  - Task 2
-  - ...
+- Comment SOLID:
+  - cart
+  - db
+  - invoice
+  - media
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [pull requests](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/20)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
