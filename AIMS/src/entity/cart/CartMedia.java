@@ -71,6 +71,7 @@ public class CartMedia {
      * @return String
      */
     @Override
+    //Single Responsibility Principle
     public String toString() {
         return "{"
                 + " media='" + media + "'"
