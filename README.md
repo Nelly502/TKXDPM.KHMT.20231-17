@@ -157,17 +157,15 @@ Comment coupling in
 <summary>Team Leader Pham Thi Phuong Nga</summary>
 <br>
 
-- Assigned tasks:
-
-  - Task 1
-  - Task 2
-  - ...
+- Assigned tasks: Discovery violations design principles in
+  - BaseController
+  - HomeController
+  - PaymentController
+  - PlaceOrderController
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+  - Pull Request(s): [17](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/17)
+
 
 </details>
 
