@@ -173,17 +173,15 @@ Comment coupling in
 <summary>Team member Pham Thi Kim Ngan</summary>
 <br>
 
-- Assigned tasks:
+- Assigned tasks: Identify violations of SOLID principles and propose remedies in
 
-  - Task 1
-  - Task 2
-  - ...
+  -src/controller/ViewCartController.java
+  -src/controller/PlaceRushOrderController.java
+  -subsystem/vnPay/VnPaySubsystemController.java
+  -subsystem/ VnPaySubsystem.java
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+  - Pull Request(s): [pull request solid phamkimngan](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/19)
 
 </details>
 

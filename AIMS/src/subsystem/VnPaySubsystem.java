@@ -16,9 +16,9 @@ import java.util.Map;
 /***
  * The {@code InterbankSubsystem} class is used to communicate with the
  * Interbank to make transaction.
- *
- * @author hieud
- *
+ */
+/*
+ * SOLID: Không vi phạm
  */
 public class VnPaySubsystem implements VnPayInterface {
 

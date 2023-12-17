@@ -7,7 +7,6 @@ import java.sql.SQLException;
 /**
  * This class controls the flow of events when users view the Cart
  *
- * @author nguyenlm
  */
 
 /**
@@ -15,6 +14,9 @@ import java.sql.SQLException;
  * Communicational cohesion do có sự truyền đối tượng Cart làm tham số trong các phương thức.
  */
 public class ViewCartController extends BaseController {
+    /*
+     * SOLID: Không vi phạm nguyên tắc nào
+     */
 
     /**
      * This method checks the available products in Cart
