@@ -16,6 +16,9 @@ import java.util.logging.Logger;
  *
  * @author nguyenlm
  */
+//The Single Responsibility Principle
+//The Interface Segregation Principle
+//The Dependency Inversion Principle
 public class Media {
 
     protected static boolean isSupportedPlaceRushOrder = new Random().nextBoolean();

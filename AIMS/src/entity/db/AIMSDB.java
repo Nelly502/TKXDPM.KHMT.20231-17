@@ -15,6 +15,8 @@ public class AIMSDB {
     /**
      * @return Connection
      */
+    //Single Responsibility Principle
+    //Dependency Inversion Principle
     public static Connection getConnection() {
         if (connect != null) {
             return connect;
