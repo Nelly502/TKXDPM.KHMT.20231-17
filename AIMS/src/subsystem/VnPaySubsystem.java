@@ -35,7 +35,8 @@ public class VnPaySubsystem implements VnPayInterface {
     public VnPaySubsystem() {
         this.ctrl = new VnPaySubsystemController();
     }
-
+ /** Functional Cohesion:
+     * - Focuses on creating a payment transaction based on the response.
     /**
      * @see VnPayInterface#payOrder(entity.payment.CreditCard, int,
      * java.lang.String)

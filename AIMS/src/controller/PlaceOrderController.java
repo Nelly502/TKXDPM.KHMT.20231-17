@@ -19,7 +19,7 @@ public class PlaceOrderController extends BaseController {
      * Just for logging purpose
      */
     private static Logger LOGGER = utils.Utils.getLogger(PlaceOrderController.class.getName());
-
+ //Functional Cohesion
     /**
      * This method checks the avalibility of product when user click PlaceOrder
      * button
@@ -59,7 +59,7 @@ public class PlaceOrderController extends BaseController {
         order.createOrderEntity();
         return new Invoice(order);
     }
-
+// Sequential Cohesion:
     /**
      * This method takes responsibility for processing the shipping info from user
      *
@@ -128,6 +128,7 @@ public class PlaceOrderController extends BaseController {
      * @param order
      * @return shippingFee
      */
+    // Coincidental Cohesion:
     public int calculateShippingFee(int amount) {
         Random rand = new Random();
         int fees = (int) (((rand.nextFloat() * 10) / 100) * amount);

@@ -22,6 +22,7 @@ public class BaseController {
      * @return CartMedia or null
      */
     //Content Coupling
+    //Communicational Cohesion: Phương thức liên quan đến kiểm tra và trả về thông tin về Media trong giỏ hàng
     public CartMedia checkMediaInCart(Media media) {
         return Cart.getCart().checkMediaInCart(media);
     }
@@ -32,6 +33,7 @@ public class BaseController {
      * @return List[CartMedia]
      */
     //Content Coupling
+    //Communicational Cohesion: Phương thức liên quan đến lấy danh sách các mục trong giỏ hàng
     public List getListCartMedia() {
         return Cart.getCart().getListMedia();
     }

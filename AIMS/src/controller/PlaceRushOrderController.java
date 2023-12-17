@@ -8,6 +8,12 @@ import java.util.logging.Logger;
 /**
  * This class controls the flow of place rush order usecase in our AIMS project
  */
+
+/**
+ * Functional cohesion vì thực hiện một chức năng cụ thể là kiểm tra và xác nhận đơn hàng cần giao hàng nhanh
+ * Communicational cohesion do có sự truyền đối tượng Shipment làm tham số trong phương thức
+ * validatePlaceRushOrderData. Thành phần này cung cấp và sử dụng dữ liệu thông qua tham số.
+ */
 public class PlaceRushOrderController extends BaseController {
     /**
      * Just for logging purpose

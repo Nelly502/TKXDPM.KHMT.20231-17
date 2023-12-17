@@ -8,6 +8,11 @@ import java.sql.SQLException;
  * This class controls the flow of events when users view the Cart
  *
  */
+
+/**
+ * Functional cohesion vì thực hiện một chức năng cụ thể liên quan đến xem giỏ hàng.
+ * Communicational cohesion do có sự truyền đối tượng Cart làm tham số trong các phương thức.
+ */
 public class ViewCartController extends BaseController {
     /*
      * SOLID: Không vi phạm nguyên tắc nào

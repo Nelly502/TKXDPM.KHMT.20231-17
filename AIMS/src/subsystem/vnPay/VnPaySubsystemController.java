@@ -14,7 +14,7 @@ import javax.xml.crypto.Data;
 
 public class VnPaySubsystemController {
     
-    
+    //FUNCTION COHESION
     // CONTROL COUPLING
     // Có sự phụ thuộc vào hằng số như PAY_COMMAND, VERSION và các phương thức cụ thể trong cùng một lớp 
     //(Config.getRandomNumber(8), Config.getIpAddress(), Config.hmacSHA512()).
