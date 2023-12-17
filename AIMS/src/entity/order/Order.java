@@ -12,7 +12,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+//Dependency Inversion Principle class 
+//Class đang phụ thuộc trực tiếp vào config và AIMSDB
 public class Order {
 
 
@@ -91,7 +92,8 @@ public class Order {
     public Order(List lstOrderMedia) {
         this.lstOrderMedia = lstOrderMedia;
     }
-
+    //Single Responsibility Principle
+    //Open/Closed Principle
     public void createOrderEntity(){
         try {
             Statement stm = AIMSDB.getConnection().createStatement();
