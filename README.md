@@ -183,7 +183,7 @@ Comment coupling in
   -subsystem/ VnPaySubsystem.java
 
 - Implementation details:
-  - Pull Request(s): [https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/19]()
+  - Pull Request(s): [pull request solid phamkimngan](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/19)
 
 </details>
 
