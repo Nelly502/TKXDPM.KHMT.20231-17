@@ -216,7 +216,7 @@ Comment coupling in
   - Find solid in class Entity: order, payment, media, shipping 
 
 - Implementation details:
-  - Pull Request(s): [https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/18]()
+  - Pull Request(s): [#18](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/18)
   - Specific implementation details:
     - Find solid in class Entity: order, payment, media, shipping
 
