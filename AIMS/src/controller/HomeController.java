@@ -10,6 +10,13 @@ import java.util.List;
  *
  * @author nguyenlm
  */
+
+/**
+ * Vi phạm Single Responsibility Principle (SRP):
+ * Lớp HomeController mở rộng từ BaseController và thực hiện một chức năng mới
+ * liên quan đến việc lấy tất cả các Media từ cơ sở dữ liệu.
+ */
+
 public class HomeController extends BaseController {
 
     /**

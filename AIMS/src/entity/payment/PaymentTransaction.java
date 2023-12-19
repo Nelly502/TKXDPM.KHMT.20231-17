@@ -12,7 +12,7 @@ public class PaymentTransaction {
     private int amount;
     private Integer orderID;
     private Date createdAt;
-
+    //Nên sử dụng Dependency Injection làm cho lớp tránh phụ thuộc trực tiếp vào AIMSDB.getConnection() -> Khó kiểm soát khi thay đổi dữ liệu
     public PaymentTransaction(String errorCode, String transactionId, String transactionContent,
                               int amount, Date createdAt) {
         super();
@@ -36,7 +36,7 @@ public class PaymentTransaction {
     public String getTransactionContent() {
         return transactionContent;
     }
-
+    //Khồng nên thực hiện truy vấn và kết nối CSDL trong cùng 1 lớp
     public void save(int orderId) throws SQLException {
         this.orderID = orderId;
         Statement stm = AIMSDB.getConnection().createStatement();

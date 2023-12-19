@@ -176,6 +176,9 @@ public class Book extends Media {
      * @return Media
      * @throws SQLException
      */
+    //The Single Responsibility Principle
+    //The Open Closed Principle
+    //The Dependency Inversion Principle
     @Override
     public Media getMediaById(int id) throws SQLException {
         String sql = "SELECT * FROM " +

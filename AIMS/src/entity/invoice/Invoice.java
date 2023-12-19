@@ -10,7 +10,7 @@ public class Invoice {
     public Invoice() {
 
     }
-
+   //Dependency Inversion Principle
     public Invoice(Order order) {
         this.order = order;
     }
@@ -36,7 +36,7 @@ public class Invoice {
     public void setAmount(int amount) {
         this.amount = amount;
     }
-
+   //Single Responsibility Principle
     public void saveInvoice() {
 
     }

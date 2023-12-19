@@ -79,6 +79,13 @@ public class VnPaySubsystemController {
     //CONTROL COUPLING
     // Giải thích: Sự phụ thuộc vào các hằng số và phương thức 
     //cụ thể trong cùng một lớp tạo ra kết nối kiểm soát.
+    /*
+     * SOLID
+     *  SRP: Phương thức generatePayOrderUrl thực hiện nhiều công việc, 
+     * bao gồm cả việc tạo URL và tính toán hash.
+     * Đề xuất giải pháp: Tách phương thức này thành các phương thức nhỏ, 
+     * mỗi phương thức có một trách nhiệm cụ thể
+     */
     public String generatePayOrderUrl(int money, String contents) throws IOException {
 
         String vnp_Version = "2.1.0";
