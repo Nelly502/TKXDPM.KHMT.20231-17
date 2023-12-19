@@ -190,14 +190,13 @@ Comment coupling in
 <br>
 
 - Comment SOLID:
-
- - cart
- - db
- - invoice
- - media
+  - cart
+  - db
+  - invoice
+  - media
 
 - Implementation details:
-  - Pull Request(s): [link pull requests](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/20)
+  - Pull Request(s): [pull requests](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/20)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
