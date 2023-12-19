@@ -16,9 +16,9 @@ import java.util.Map;
 /***
  * The {@code InterbankSubsystem} class is used to communicate with the
  * Interbank to make transaction.
- */
-/*
- * SOLID: Không vi phạm
+ *
+ * @author hieud
+ *
  */
 public class VnPaySubsystem implements VnPayInterface {
 
@@ -31,17 +31,14 @@ public class VnPaySubsystem implements VnPayInterface {
      * Initializes a newly created {@code InterbankSubsystem} object so that it
      * represents an Interbank subsystem.
      */
-    //Stamp Coupling:
     public VnPaySubsystem() {
         this.ctrl = new VnPaySubsystemController();
     }
- /** Functional Cohesion:
-     * - Focuses on creating a payment transaction based on the response.
+
     /**
      * @see VnPayInterface#payOrder(entity.payment.CreditCard, int,
      * java.lang.String)
      */
-    //Content Coupling
     public String generatePayUrl(int amount, String contents) {
 
         try {
@@ -50,7 +47,7 @@ public class VnPaySubsystem implements VnPayInterface {
             throw new RuntimeException(e);
         }
     }
-    //Content Coupling
+
     public PaymentTransaction makePaymentTransaction(Map<String, String> response) throws ParseException {
             return ctrl.makePaymentTransaction(response);
     }

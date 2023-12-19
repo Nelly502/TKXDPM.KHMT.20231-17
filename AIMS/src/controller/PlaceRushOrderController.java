@@ -28,7 +28,7 @@ public class PlaceRushOrderController extends BaseController {
      */
     public static void validatePlaceRushOrderData(Shipment deliveryData) {
         if (deliveryData.getShipType() == utils.Configs.PLACE_RUSH_ORDER) {
-           // validate
+            // validate
         }
     }
 }

@@ -12,7 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-//Dependency Inversion Principle class 
+//Dependency Inversion Principle class
 //Class đang phụ thuộc trực tiếp vào config và AIMSDB
 public class Order {
 
@@ -132,7 +132,7 @@ public class Order {
                 preparedStatement2.setString(3, shipment.getDeliveryTime());
                 preparedStatement2.setString(4, shipment.getShipmentDetail());
                 preparedStatement2.setInt(5, id);
-              preparedStatement2.executeUpdate();
+                preparedStatement2.executeUpdate();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

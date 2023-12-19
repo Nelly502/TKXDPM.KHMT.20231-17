@@ -24,7 +24,7 @@ public class PlaceOrderController extends BaseController {
      * Just for logging purpose
      */
     private static Logger LOGGER = utils.Utils.getLogger(PlaceOrderController.class.getName());
- //Functional Cohesion
+    //Functional Cohesion
     /**
      * This method checks the avalibility of product when user click PlaceOrder
      * button

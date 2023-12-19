@@ -3,7 +3,7 @@ package entity.shipping;
 import jdk.jshell.spi.ExecutionControl;
 //Single Responsibility Principle : Nên thêm các phương thức, tính năng liên quan đến tính toán phí vận chuyển, xác nhận thông tin vận chuyển
 public class Shipment {
-    //get set cho shipType, deliveryInstruction, shipmentDetail, deliveryTime -> Encapsulation 
+    //get set cho shipType, deliveryInstruction, shipmentDetail, deliveryTime -> Encapsulation
     private int shipType;
 
     private String deliveryInstruction;
