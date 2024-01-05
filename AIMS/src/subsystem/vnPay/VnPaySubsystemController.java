@@ -21,7 +21,6 @@ public class VnPaySubsystemController {
     // Điều này tạo ra coupling kiểm soát, vì VnPaySubsystemController phụ thuộc vào các quyết 
     //định kiểm soát được thực hiện trong các phương thức và hằng số của nó.
     private static final String PAY_COMMAND = "pay";
-    private static final String PAY_COMMAND = "pay";
     private static final String VERSION = "2.1.0";
 
 //  private static VnPayService vnPayService = new VnPayService();
