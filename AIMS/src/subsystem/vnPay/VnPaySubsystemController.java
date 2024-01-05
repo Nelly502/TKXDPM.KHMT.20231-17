@@ -10,16 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import javax.xml.crypto.Data;
-
 public class VnPaySubsystemController {
-    
-    //FUNCTION COHESION
-    // CONTROL COUPLING
-    // Có sự phụ thuộc vào hằng số như PAY_COMMAND, VERSION và các phương thức cụ thể trong cùng một lớp 
-    //(Config.getRandomNumber(8), Config.getIpAddress(), Config.hmacSHA512()).
-    // Điều này tạo ra coupling kiểm soát, vì VnPaySubsystemController phụ thuộc vào các quyết 
-    //định kiểm soát được thực hiện trong các phương thức và hằng số của nó.
     private static final String PAY_COMMAND = "pay";
     private static final String VERSION = "2.1.0";
 
@@ -31,9 +22,6 @@ public class VnPaySubsystemController {
      * @param contents
      * @return PaymentTransaction
      */
-
-    //DATA COUPLING
-    // Giải thích: Phương thức 'refund' trả về đối tượng PaymentTransaction, tạo ra mức độ kết nối dữ liệu.
     public PaymentTransaction refund(int amount, String contents) {
         return null;
     }
@@ -75,9 +63,6 @@ public class VnPaySubsystemController {
      * @param contents
      * @return PaymentTransaction
      */
-    //CONTROL COUPLING
-    // Giải thích: Sự phụ thuộc vào các hằng số và phương thức 
-    //cụ thể trong cùng một lớp tạo ra kết nối kiểm soát.
     public String generatePayOrderUrl(int money, String contents) throws IOException {
 
         String vnp_Version = "2.1.0";
@@ -153,11 +138,6 @@ public class VnPaySubsystemController {
      * @param response
      * @return PaymentTransaction
      */
-
-    // CONTENT COUPLING
-    // Phương thức makePaymentTransaction phụ thuộc vào các loại exception từ gói common.exception. 
-    //Điều này tạo ra content coupling, vì VnPaySubsystemController phụ thuộc vào cấu trúc và 
-    //tên của các loại exception cụ thể.
     public PaymentTransaction makePaymentTransaction(Map<String, String> response) throws TransactionNotDoneException, TransactionFailedException, TransactionReverseException, UnrecognizedException, ParseException {
         if (response == null) {
             return null;

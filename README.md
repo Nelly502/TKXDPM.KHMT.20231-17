@@ -157,17 +157,15 @@ Comment coupling in
 <summary>Team Leader Pham Thi Phuong Nga</summary>
 <br>
 
-- Assigned tasks:
-
-  - Task 1
-  - Task 2
-  - ...
+- Assigned tasks: Discovery violations design principles in
+  - BaseController
+  - HomeController
+  - PaymentController
+  - PlaceOrderController
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+  - Pull Request(s): [17](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/17)
+
 
 </details>
 
@@ -175,17 +173,15 @@ Comment coupling in
 <summary>Team member Pham Thi Kim Ngan</summary>
 <br>
 
-- Assigned tasks:
+- Assigned tasks: Identify violations of SOLID principles and propose remedies in
 
-  - Task 1
-  - Task 2
-  - ...
+  -src/controller/ViewCartController.java
+  -src/controller/PlaceRushOrderController.java
+  -subsystem/vnPay/VnPaySubsystemController.java
+  -subsystem/ VnPaySubsystem.java
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+  - Pull Request(s): [pull request solid phamkimngan](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/19)
 
 </details>
 
@@ -193,14 +189,14 @@ Comment coupling in
 <summary>Team member Do Minh Nghia</summary>
 <br>
 
-- Assigned tasks:
-
-  - Task 1
-  - Task 2
-  - ...
+- Comment SOLID:
+  - cart
+  - db
+  - invoice
+  - media
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [pull requests](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/20)
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
@@ -213,15 +209,12 @@ Comment coupling in
 
 - Assigned tasks:
 
-  - Task 1
-  - Task 2
-  - ...
+  - Find solid in class Entity: order, payment, media, shipping 
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [18](https://github.com/Nelly502/TKXDPM.KHMT.20231-17/pull/18)
   - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+    - Find solid in class Entity: order, payment, media, shipping
 
 </details>
 

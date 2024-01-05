@@ -56,6 +56,7 @@ public class Cart {
     /**
      * @return int
      */
+    //Single Responsibility Principle
     public int getTotalMedia() {
         int total = 0;
         for (Object obj : lstCartMedia) {
@@ -69,6 +70,7 @@ public class Cart {
     /**
      * @return int
      */
+    //Single Responsibility Principle
     public int calSubtotal() {
         int total = 0;
         for (Object obj : lstCartMedia) {
@@ -82,6 +84,7 @@ public class Cart {
     /**
      * @throws SQLException
      */
+    //Dependency Inversion Principle
     public void checkAvailabilityOfProduct() throws SQLException {
         boolean allAvai = true;
         for (Object object : lstCartMedia) {

@@ -1,5 +1,5 @@
 package entity.user;
-
+//Single Responsibility Principle: Lớp chỉ có chức năng xử lý logic liên quan đến người dùng
 public class User {
 
     private int id;
