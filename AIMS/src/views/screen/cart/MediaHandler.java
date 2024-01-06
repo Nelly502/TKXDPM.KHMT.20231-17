@@ -6,10 +6,7 @@ import entity.cart.Cart;
 import entity.cart.CartMedia;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -21,7 +18,9 @@ import views.screen.FXMLScreenHandler;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class MediaHandler extends FXMLScreenHandler {
@@ -54,6 +53,9 @@ public class MediaHandler extends FXMLScreenHandler {
 
     @FXML
     protected Button btnDelete;
+
+    @FXML
+    protected CheckBox selectBox;
 
     private CartMedia cartMedia;
     private Spinner<Integer> spinner;
@@ -133,4 +135,31 @@ public class MediaHandler extends FXMLScreenHandler {
         spinnerFX.setAlignment(Pos.CENTER);
         spinnerFX.getChildren().add(this.spinner);
     }
+
+    private List<CartMedia> selectedCartMediaList = new ArrayList<>();
+
+    @FXML
+    private void initialize() {
+        selectBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            LOGGER.info("New value of selectBox: " + newValue);
+            // Khi giá trị của checkbox thay đổi
+            cartMedia.setSelected(newValue);
+            if (newValue) {
+                selectedCartMediaList.add(cartMedia);
+                LOGGER.info("Bạn đã chọn " + cartMedia.getMedia().getTitle() + ". IsSelected: " + cartMedia.isSelected());
+            } else {
+                selectedCartMediaList.remove(cartMedia);
+                LOGGER.info("Bạn đã hủy chọn " + cartMedia.getMedia().getTitle() + ". IsSelected: " + cartMedia.isSelected());
+            }
+            cartScreen.updateCartAmount();
+
+            LOGGER.info("Selected Cart Media List Size (in MediaHandler): " + selectedCartMediaList.size());
+        });
+    }
+
+    public List<CartMedia> getSelectedCartMediaList() {
+        LOGGER.info("Selected Cart Media List Size (in CartScreenHandler): " + selectedCartMediaList.size());
+        return selectedCartMediaList;
+    }
+
 }

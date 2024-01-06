@@ -1,12 +1,14 @@
 package entity.cart;
 
 import entity.media.Media;
+import entity.order.OrderMedia;
 
 public class CartMedia {
 
     private Media media;
     private int quantity;
     private int price;
+    private boolean isSelected;
 
     public CartMedia() {
 
@@ -66,12 +68,18 @@ public class CartMedia {
         this.price = price;
     }
 
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
 
     /**
      * @return String
      */
     @Override
-    //Single Responsibility Principle
     public String toString() {
         return "{"
                 + " media='" + media + "'"
@@ -79,4 +87,14 @@ public class CartMedia {
                 + "}";
     }
 
+    public OrderMedia toOrderMedia() {
+        // Tạo một đối tượng OrderMedia mới và thiết lập thông tin từ CartMedia
+        OrderMedia orderMedia = new OrderMedia( media,  quantity, price);
+        orderMedia.setMedia(this.getMedia());  // Giả sử getMedia() trả về đối tượng Media
+        orderMedia.setPrice(this.getPrice());
+        orderMedia.setQuantity(this.getQuantity());
+        // Các thông tin khác mà bạn muốn chuyển đổi từ CartMedia sang OrderMedia
+
+        return orderMedia;
+    }
 }
