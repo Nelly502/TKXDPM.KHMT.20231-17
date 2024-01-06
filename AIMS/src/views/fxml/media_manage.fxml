@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox layoutX="95.2" prefHeight="788.0" prefWidth="1352.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="-121.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox alignment="TOP_RIGHT" prefHeight="789.0" prefWidth="1110.0" style="-fx-padding: 24px;">
+                    <children>
+                  <VBox>
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="MEDIA MANAGE" textFill="#5091e6">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                                <Button fx:id="backHome" mnemonicParsing="false" prefHeight="26.0" prefWidth="215.0" text="Back to home" />
+                     </children>
+                  </VBox>
+                        <ComboBox fx:id="addComboBox" prefHeight="30.0" prefWidth="150.0" promptText="Create" />
+                        <TableView fx:id="mediaTableView" prefHeight="690.0" prefWidth="974.0">
+                            <columns>
+                                <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                                <TableColumn fx:id="titleColumn" prefWidth="141.5999755859375" text="Title" />
+                                <TableColumn fx:id="categoryColumn" prefWidth="101.60003662109375" text="Category" />
+                                <TableColumn fx:id="valueColumn" prefWidth="81.5999755859375" text="Value" />
+                                <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="84.79998779296875" text="Price" />
+                                <TableColumn fx:id="quantityColumn" minWidth="0.0" prefWidth="74.4000244140625" text="Quantity" />
+                                <TableColumn fx:id="typeColumn" minWidth="0.0" prefWidth="92.800048828125" text="Type" />
+                                <TableColumn fx:id="imageColumn" minWidth="0.0" prefWidth="256.800048828125" text="Image" />
+                                <TableColumn fx:id="actionsColumn" prefWidth="100.800048828125" text="Actions" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

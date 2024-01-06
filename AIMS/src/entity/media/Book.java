@@ -2,10 +2,8 @@ package entity.media;
 
 import entity.db.AIMSDB;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Date;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Book extends Media {
@@ -18,14 +16,12 @@ public class Book extends Media {
     String language;
     String bookCategory;
 
-    public Book() throws SQLException {
-
+    public Book() {
     }
 
-    public Book(int id, String title, String category, int price, int quantity, String type, String author,
-                String coverType, String publisher, Date publishDate, int numOfPages, String language,
-                String bookCategory) throws SQLException {
-        super(id, title, category, price, quantity, type);
+    public Book(int id, String title, String category, int price, int quantity, String imageURL, String type, String author,
+                String coverType, String publisher, Date publishDate, int numOfPages, String language, String bookCategory) {
+        super(id, title, category, price, quantity, imageURL, type);
         this.author = author;
         this.coverType = coverType;
         this.publisher = publisher;
@@ -35,198 +31,174 @@ public class Book extends Media {
         this.bookCategory = bookCategory;
     }
 
-
-    /**
-     * @return int
-     */
     // getter and setter
     public int getId() {
         return this.id;
     }
 
-
-    /**
-     * @return String
-     */
     public String getAuthor() {
         return this.author;
     }
 
-
-    /**
-     * @param author
-     * @return Book
-     */
     public Book setAuthor(String author) {
         this.author = author;
         return this;
     }
 
-
-    /**
-     * @return String
-     */
     public String getCoverType() {
         return this.coverType;
     }
 
-
-    /**
-     * @param coverType
-     * @return Book
-     */
     public Book setCoverType(String coverType) {
         this.coverType = coverType;
         return this;
     }
 
-
-    /**
-     * @return String
-     */
     public String getPublisher() {
         return this.publisher;
     }
 
-
-    /**
-     * @param publisher
-     * @return Book
-     */
     public Book setPublisher(String publisher) {
         this.publisher = publisher;
         return this;
     }
 
 
-    /**
-     * @return Date
-     */
     public Date getPublishDate() {
         return this.publishDate;
     }
 
-
-    /**
-     * @param publishDate
-     * @return Book
-     */
     public Book setPublishDate(Date publishDate) {
         this.publishDate = publishDate;
         return this;
     }
 
-
-    /**
-     * @return int
-     */
     public int getNumOfPages() {
         return this.numOfPages;
     }
 
-
-    /**
-     * @param numOfPages
-     * @return Book
-     */
     public Book setNumOfPages(int numOfPages) {
         this.numOfPages = numOfPages;
         return this;
     }
 
-
-    /**
-     * @return String
-     */
     public String getLanguage() {
         return this.language;
     }
 
-
-    /**
-     * @param language
-     * @return Book
-     */
     public Book setLanguage(String language) {
         this.language = language;
         return this;
     }
 
-
-    /**
-     * @return String
-     */
     public String getBookCategory() {
         return this.bookCategory;
     }
 
-
-    /**
-     * @param bookCategory
-     * @return Book
-     */
     public Book setBookCategory(String bookCategory) {
         this.bookCategory = bookCategory;
         return this;
     }
 
-
-    /**
-     * @param id
-     * @return Media
-     * @throws SQLException
-     */
-    //The Single Responsibility Principle
-    //The Open Closed Principle
-    //The Dependency Inversion Principle
     @Override
-    public Media getMediaById(int id) throws SQLException {
-        String sql = "SELECT * FROM " +
-                "aims.Book " +
-                "INNER JOIN aims.Media " +
-                "ON Media.id = Book.id " +
-                "where Media.id = " + id + ";";
-        Statement stm = AIMSDB.getConnection().createStatement();
-        ResultSet res = stm.executeQuery(sql);
-        if (res.next()) {
+    public Book from(ResultSet res) throws SQLException {
+        super.from(res);
 
-            // from Media table
-            String title = "";
-            String type = res.getString("type");
-            int price = res.getInt("price");
-            String category = res.getString("category");
-            int quantity = res.getInt("quantity");
-
-            // from Book table
-            String author = res.getString("author");
-            String coverType = res.getString("coverType");
-            String publisher = res.getString("publisher");
-            Date publishDate = res.getDate("publishDate");
-            int numOfPages = res.getInt("numOfPages");
-            String language = res.getString("language");
-            String bookCategory = res.getString("bookCategory");
-
-            return new Book(id, title, category, price, quantity, type,
-                    author, coverType, publisher, publishDate, numOfPages, language, bookCategory);
-
-        } else {
-            throw new SQLException();
-        }
+        author = res.getString("author");
+        coverType = res.getString("coverType");
+        publisher = res.getString("publisher");
+        String publishDateColumn = res.getString("publishDate");
+        publishDate = publishDateColumn != null ? Date.valueOf(publishDateColumn) : null;
+        numOfPages = res.getInt("numOfPages");
+        language = res.getString("language");
+        bookCategory = res.getString("bookCategory");
+        return this;
     }
 
-
-    /**
-     * @return List
-     */
     @Override
-    public List getAllMedia() {
+    public Book getMediaById(int id) throws SQLException {
+        String sql = "SELECT * FROM Media "
+                + "LEFT JOIN Book ON Media.id = Book.id "
+                + "WHERE type = 'book' AND Media.id = ?;";
+        PreparedStatement stm = AIMSDB.getConnection().prepareStatement(sql);
+        stm.setInt(1, id);
+        ResultSet res = stm.executeQuery();
+        if (res.next()) {
+            Book book = new Book().from(res);
+            book.setId(id);
+            return book;
+        }
         return null;
     }
 
+    @Override
+    public List<Media> getAllMedia() throws SQLException {
+        List<Media> books = new ArrayList<Media>();
 
-    /**
-     * @return String
-     */
+        String sql = "SELECT *, Media.id AS media_id FROM Media "
+                + "LEFT JOIN Book ON Media.id = Book.id "
+                + "WHERE type = 'book'"
+                + "ORDER BY Media.id DESC;";
+        Statement stm = AIMSDB.getConnection().createStatement();
+        ResultSet res = stm.executeQuery(sql);
+        while (res.next()) {
+            Book book = new Book().from(res);
+            book.setId(res.getInt("media_id"));
+            books.add(book);
+        }
+        return books;
+    }
+
+    @Override
+    public void create() throws SQLException {
+        super.create();
+        String sql = "INSERT INTO Book (id, author, coverType, publisher, \"publishDate\", \"numOfPages\", language, \"bookCategory\") "
+                + "VALUES (?,?,?,?,?,?,?,?) "
+                + ";";
+        PreparedStatement stm = AIMSDB.getConnection().prepareStatement(sql);
+        stm.setInt(1, id);
+        stm.setString(2, author);
+        stm.setString(3, coverType);
+        stm.setString(4, publisher);
+        stm.setString(5, publishDate.toString());
+        stm.setInt(6, numOfPages);
+        stm.setString(7, language);
+        stm.setString(8, bookCategory);
+        stm.executeUpdate();
+    }
+
+    @Override
+    public void save() throws SQLException {
+        if (id == 0) {
+            create();
+        } else {
+            super.save();
+            String sql = "UPDATE Book SET "
+                    + "author = ?, \"coverType\" = ?, publisher = ?, \"publishDate\" = ?, \"numOfPages\" = ?, language = ?, \"bookCategory\" = ? "
+                    + "WHERE id = ?;";
+            PreparedStatement stm = AIMSDB.getConnection().prepareStatement(sql);
+            stm.setString(1, author);
+            stm.setString(2, coverType);
+            stm.setString(3, publisher);
+            stm.setString(4, publishDate.toString());
+            stm.setInt(5, numOfPages);
+            stm.setString(6, language);
+            stm.setString(7, bookCategory);
+            stm.setInt(8, id);
+            int updated = stm.executeUpdate();
+        }
+    }
+
+    @Override
+    public void delete(int id) throws SQLException {
+        String sql = "DELETE FROM Book WHERE id = ?;";
+        PreparedStatement stm = AIMSDB.getConnection().prepareStatement(sql);
+        stm.setInt(1, id);
+        stm.executeUpdate();
+
+        super.delete(id);
+    }
+
     @Override
     public String toString() {
         return "{" +
