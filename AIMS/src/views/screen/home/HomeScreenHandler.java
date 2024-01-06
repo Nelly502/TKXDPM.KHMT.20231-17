@@ -2,6 +2,7 @@ package views.screen.home;
 
 import common.exception.ViewCartException;
 import controller.HomeController;
+import controller.MediaController;
 import controller.ViewCartController;
 import entity.cart.Cart;
 import entity.media.Media;
@@ -13,6 +14,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
@@ -21,6 +23,7 @@ import utils.Configs;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
 import views.screen.cart.CartScreenHandler;
+import views.screen.manage.media.MediaManageScreenHandler;
 
 import java.io.File;
 import java.io.IOException;
@@ -106,27 +109,39 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             e.printStackTrace();
         }
 
-        aimsImage.setOnMouseClicked(e -> {
+        aimsImage.setOnMouseClicked(event -> {
             addMediaHome(this.homeItems);
         });
-
-        cartImage.setOnMouseClicked(e -> {
-            CartScreenHandler cartScreen;
+        cartImage.setOnMouseClicked(event -> {
             try {
-                LOGGER.info("User clicked to view cart");
-                cartScreen = new CartScreenHandler(this.stage, Configs.CART_SCREEN_PATH);
+                CartScreenHandler cartScreen = new CartScreenHandler(this.stage, Configs.CART_SCREEN_PATH);
                 cartScreen.setHomeScreenHandler(this);
                 cartScreen.setBController(new ViewCartController());
                 cartScreen.requestToViewCart(this);
-            } catch (IOException | SQLException e1) {
-                throw new ViewCartException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
+            } catch (IOException | SQLException exception) {
+                throw new ViewCartException(Arrays.toString(exception.getStackTrace()).replaceAll(", ", "\n"));
             }
         });
+
         addMediaHome(this.homeItems);
         addMenuItem(0, "Book", splitMenuBtnSearch);
         addMenuItem(1, "DVD", splitMenuBtnSearch);
         addMenuItem(2, "CD", splitMenuBtnSearch);
+
+        aimsImage.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
+            MediaManageScreenHandler mediaManageScreen;
+            try {
+                mediaManageScreen = new MediaManageScreenHandler(this.stage, Configs.MEDIA_MANAGE_SCREEN_PATH);
+                mediaManageScreen.setHomeScreenHandler(this);
+                mediaManageScreen.setBController(new MediaController());
+                mediaManageScreen.show();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
     }
+
 
     public void setImage() {
         // fix image path caused by fxml
