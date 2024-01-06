@@ -43,12 +43,12 @@ public class DVDScreenHandler extends MediaScreenHandler implements Initializabl
 
     @Override
     protected void save() throws SQLException {
-        DVD dvd = getDVDValues();
+        DVD dvd = createDVDFromInput();
         getBController().saveMedia(dvd);
     }
 
-    protected DVD getDVDValues() {
-        Media media = getMediaValues();
+    protected DVD createDVDFromInput() {
+        Media media = createMediaFromInput();
 
         String discType = discTypeField.getText();
         String director = directorField.getText();

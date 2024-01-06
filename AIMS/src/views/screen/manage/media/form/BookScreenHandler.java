@@ -43,12 +43,12 @@ public class BookScreenHandler extends MediaScreenHandler implements Initializab
 
     @Override
     protected void save() throws SQLException {
-        Book book = getBookValues();
+        Book book = createBookFromInput();
         getBController().saveMedia(book);
     }
 
-    protected Book getBookValues() {
-        Media media = getMediaValues();
+    protected Book createBookFromInput() {
+        Media media = createMediaFromInput();
 
         String author = authorField.getText();
         String coverType = coverTypeField.getText();

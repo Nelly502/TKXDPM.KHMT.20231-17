@@ -113,11 +113,11 @@ public class MediaScreenHandler extends BaseScreenHandler implements Initializab
     }
 
     protected void save() throws SQLException {
-        Media media = getMediaValues();
+        Media media = createMediaFromInput();
         getBController().saveMedia(media);
     }
 
-    protected Media getMediaValues() {
+    protected Media createMediaFromInput() {
         String title = titleField.getText();
         String category = categoryField.getText();
         int price = Integer.valueOf(priceField.getText());
@@ -139,8 +139,8 @@ public class MediaScreenHandler extends BaseScreenHandler implements Initializab
         quantityField.setText(String.valueOf(quantity));
         uploadedFilePath = imageURL;
     }
-
-    public void setFormTitle(String title) {
+    public void setTitle(String title) {
         this.formTitle.setText(title);
     }
 }
+

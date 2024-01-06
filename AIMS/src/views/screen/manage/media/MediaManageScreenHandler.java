@@ -91,15 +91,15 @@ public class MediaManageScreenHandler extends ManageScreenHandler implements Ini
             String type = addComboBox.getSelectionModel().getSelectedItem().toString();
             switch (type) {
                 case BOOK: {
-                    redirectToBookForm(0);
+                    navigateToBook(0);
                     break;
                 }
                 case CD: {
-                    redirectToCDForm(0);
+                    navigateToCD(0);
                     break;
                 }
                 case DVD: {
-                    redirectToDVDForm(0);
+                    navigateToDVD(0);
                     break;
                 }
             }
@@ -131,7 +131,7 @@ public class MediaManageScreenHandler extends ManageScreenHandler implements Ini
                 switch (media.getType()) {
                     case BOOK: {
                         editButton.setOnAction(e -> {
-                            redirectToBookForm(media.getId());
+                            navigateToBook(media.getId());
                         });
 
                         deleteButton.setOnAction(e -> {
@@ -146,7 +146,7 @@ public class MediaManageScreenHandler extends ManageScreenHandler implements Ini
                     }
                     case CD: {
                         editButton.setOnAction(e -> {
-                            redirectToCDForm(media.getId());
+                            navigateToCD(media.getId());
                         });
 
                         deleteButton.setOnAction(e -> {
@@ -161,7 +161,7 @@ public class MediaManageScreenHandler extends ManageScreenHandler implements Ini
                     }
                     case DVD: {
                         editButton.setOnAction(e -> {
-                            redirectToDVDForm(media.getId());
+                            navigateToDVD(media.getId());
                         });
 
                         deleteButton.setOnAction(e -> {
@@ -187,60 +187,84 @@ public class MediaManageScreenHandler extends ManageScreenHandler implements Ini
         }
     }
 
-    private void redirectToBookForm(int id) {
+    private void navigateToBook(int id) {
         try {
-            BookScreenHandler bookFormScreen = new BookScreenHandler(this.stage, Configs.BOOK_SCREEN_PATH);
-            bookFormScreen.setId(id);
-            bookFormScreen.setBController(bookController);
-            bookFormScreen.setDefaultBookValues();
-            if (id != 0) {
-                bookFormScreen.setFormTitle("EDITbook");
-            } else  {
-                bookFormScreen.setFormTitle("ADD book");
-            }
-            bookFormScreen.show();
-        } catch (IOException ex) {
+            BookScreenHandler bookScreen = createBookScreenHandler(id);
+            setupBookProperties(bookScreen, id);
+            setTitleBasedOnMode(bookScreen, id, "BOOK");
+            bookScreen.show();
+        } catch (IOException | SQLException ex) {
             throw new RuntimeException(ex);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 
-    private void redirectToCDForm(int id) {
+    private BookScreenHandler createBookScreenHandler(int id) throws IOException {
+        return new BookScreenHandler(this.stage, Configs.BOOK_SCREEN_PATH);
+    }
+
+    private void setupBookProperties(BookScreenHandler bookScreen, int id) throws SQLException {
+        bookScreen.setId(id);
+        bookScreen.setBController(bookController);
+        bookScreen.setDefaultBookValues();
+    }
+
+    private void setTitleBasedOnMode(BookScreenHandler bookScreen, int id, String mediaType) {
+        String Title = (id != 0) ? "EDIT " + mediaType : "ADD " + mediaType;
+        bookScreen.setTitle(Title);
+    }
+
+
+    private void navigateToCD(int id) {
         try {
-            CDScreenHandler cdFormScreen = new CDScreenHandler(this.stage, Configs.CD_SCREEN_PATH);
-            cdFormScreen.setId(id);
-            cdFormScreen.setBController(cdController);
-            cdFormScreen.setDefaultCDValues();
-            if (id != 0) {
-                cdFormScreen.setFormTitle("EDIT CD");
-            } else  {
-                cdFormScreen.setFormTitle("ADD CD");
-            }
-            cdFormScreen.show();
-        } catch (IOException ex) {
+            CDScreenHandler cdScreen = createCDScreenHandler(id);
+            setupCDProperties(cdScreen, id);
+            setTitleBasedOnMode(cdScreen, id, "CD");
+            cdScreen.show();
+        } catch (IOException | SQLException ex) {
             throw new RuntimeException(ex);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 
-    private void redirectToDVDForm(int id) {
+    private CDScreenHandler createCDScreenHandler(int id) throws IOException {
+        return new CDScreenHandler(this.stage, Configs.CD_SCREEN_PATH);
+    }
+
+    private void setupCDProperties(CDScreenHandler cdScreen, int id) throws SQLException {
+        cdScreen.setId(id);
+        cdScreen.setBController(cdController);
+        cdScreen.setDefaultCDValues();
+    }
+
+    private void setTitleBasedOnMode(CDScreenHandler cdScreen, int id, String mediaType) {
+        String Title = (id != 0) ? "EDIT " + mediaType : "ADD " + mediaType;
+        cdScreen.setTitle(Title);
+    }
+
+
+    private void navigateToDVD(int id) {
         try {
-            DVDScreenHandler dvdFormScreen = new DVDScreenHandler(this.stage, Configs.DVD_SCREEN_PATH);
-            dvdFormScreen.setId(id);
-            dvdFormScreen.setBController(dvdController);
-            dvdFormScreen.setDefaultDVDValues();
-            if (id != 0) {
-                dvdFormScreen.setFormTitle("EDIDVD");
-            } else  {
-                dvdFormScreen.setFormTitle("ADD DVD");
-            }
-            dvdFormScreen.show();
-        } catch (IOException ex) {
+            DVDScreenHandler dvdScreen = createDVDScreenHandler(id);
+            setupDVDProperties(dvdScreen, id);
+            setTitleBasedOnMode(dvdScreen, id, "DVD");
+            dvdScreen.show();
+        } catch (IOException | SQLException ex) {
             throw new RuntimeException(ex);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
+
+    private DVDScreenHandler createDVDScreenHandler(int id) throws IOException {
+        return new DVDScreenHandler(this.stage, Configs.DVD_SCREEN_PATH);
+    }
+
+    private void setupDVDProperties(DVDScreenHandler dvdScreen, int id) throws SQLException {
+        dvdScreen.setId(id);
+        dvdScreen.setBController(dvdController);
+        dvdScreen.setDefaultDVDValues();
+    }
+
+    private void setTitleBasedOnMode(DVDScreenHandler dvdScreen, int id, String mediaType) {
+        String Title = (id != 0) ? "EDIT " + mediaType : "ADD " + mediaType;
+        dvdScreen.setTitle(Title);
+    }
+
 }

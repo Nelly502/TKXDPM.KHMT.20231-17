@@ -20,7 +20,7 @@
                             <children>
                                 <VBox alignment="CENTER">
                                     <children>
-                                        <Label fx:id="formTitle" alignment="CENTER" contentDisplay="CENTER" text="LABEL" textAlignment="CENTER" textFill="#5091e6">
+                                        <Label fx:id="formTitlee" alignment="CENTER" contentDisplay="CENTER" text="LABEL" textAlignment="CENTER" textFill="#5091e6">
                                             <font>
                                                 <Font name="System Bold" size="25.0" />
                                             </font>

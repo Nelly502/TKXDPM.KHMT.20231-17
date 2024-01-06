@@ -37,12 +37,12 @@ public class CDScreenHandler extends MediaScreenHandler implements Initializable
 
     @Override
     protected void save() throws SQLException {
-        CD cd = getCDValues();
+        CD cd = createCDFromInput();
         getBController().saveMedia(cd);
     }
 
-    protected CD getCDValues() {
-        Media media = getMediaValues();
+    protected CD createCDFromInput() {
+        Media media = createMediaFromInput();
 
         String artist = artistField.getText();
         String recordLabel = recordLabelField.getText();
