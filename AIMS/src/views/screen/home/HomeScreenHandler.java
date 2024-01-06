@@ -2,17 +2,16 @@ package views.screen.home;
 
 import common.exception.ViewCartException;
 import controller.HomeController;
+import controller.BaseController;
 import controller.ViewCartController;
 import entity.cart.Cart;
 import entity.media.Media;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
@@ -21,15 +20,13 @@ import utils.Configs;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
 import views.screen.cart.CartScreenHandler;
+import views.screen.popup.PopupScreen;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class HomeScreenHandler extends BaseScreenHandler implements Initializable {
@@ -60,6 +57,14 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     @FXML
     private SplitMenuButton splitMenuBtnSearch;
 
+    @FXML
+    private TextField searchField;
+
+    @FXML
+    private Label pageLabel;
+
+    private List displayedItems;
+
     private List homeItems;
 
     public HomeScreenHandler(Stage stage, String screenPath) throws IOException {
@@ -86,6 +91,40 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         super.show();
     }
 
+    private int currentPage = 0;
+    private final int itemsPerPage = 12;
+
+    @FXML
+    private void showNextPage(MouseEvent event) {
+        int start = currentPage * itemsPerPage;
+        int end = Math.min(start + itemsPerPage, displayedItems.size());
+
+        if (end < displayedItems.size()) {
+            currentPage++;
+            List<MediaHandler> displayedItems = updateMediaDisplay(this.displayedItems);
+            addMediaHome(displayedItems);
+        }
+    }
+
+    @FXML
+    private void showPrePage(MouseEvent event) {
+        if (currentPage > 0) {
+            currentPage--;
+            List<MediaHandler> displayedItems = updateMediaDisplay(this.displayedItems);
+            addMediaHome(displayedItems);
+        }
+    }
+
+    private List<MediaHandler> updateMediaDisplay( List Items) {
+        int start = currentPage * itemsPerPage;
+        int end = Math.min(start + itemsPerPage, Items.size());
+        List<MediaHandler> displayedItems = new ArrayList<>(Items.subList(start, end));
+
+        int totalPages = (int) Math.ceil((double) Items.size() / itemsPerPage);
+        int currentDisplayPage = currentPage + 1;
+        pageLabel.setText("       " + currentDisplayPage + " / " + totalPages);
+        return displayedItems;
+    }
     /**
      * @param arg0
      * @param arg1
@@ -101,6 +140,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
                 MediaHandler m1 = new MediaHandler(Configs.HOME_MEDIA_PATH, media, this);
                 this.homeItems.add(m1);
             }
+            this.displayedItems = this.homeItems;
         } catch (SQLException | IOException e) {
             LOGGER.info("Errors occured: " + e.getMessage());
             e.printStackTrace();
@@ -126,6 +166,10 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         addMenuItem(0, "Book", splitMenuBtnSearch);
         addMenuItem(1, "DVD", splitMenuBtnSearch);
         addMenuItem(2, "CD", splitMenuBtnSearch);
+        addMenuItem(3, "<10k đ", splitMenuBtnSearch);
+        addMenuItem(4, "10k đ-50k đ", splitMenuBtnSearch);
+        addMenuItem(5, "50k đ-100k đ", splitMenuBtnSearch);
+        addMenuItem(6, ">100k đ", splitMenuBtnSearch);
     }
 
     public void setImage() {
@@ -181,19 +225,79 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
                 vBox.getChildren().clear();
             });
 
-            // filter only media with the choosen category
+            // filter only media with the choosen category or price
             List filteredItems = new ArrayList<>();
             homeItems.forEach(me -> {
                 MediaHandler media = (MediaHandler) me;
                 if (media.getMedia().getTitle().toLowerCase().startsWith(text.toLowerCase())) {
                     filteredItems.add(media);
+                }else {
+                    if (text.equals("<10k đ")) {
+                        if (media.getMedia().getPrice() < 10) {
+                            filteredItems.add(media);
+                        }
+
+                    } else if (text.equals("10k đ-50k đ")) {
+                        if (media.getMedia().getPrice() >= 10 && media.getMedia().getPrice() <= 50) {
+                            filteredItems.add(media);
+                        }
+                    } else if (text.equals("50k đ-100k đ")) {
+                        if (media.getMedia().getPrice() > 50 && media.getMedia().getPrice() <= 100) {
+                            filteredItems.add(media);
+                        }
+                    } else if (text.equals("50k đ-100k đ")) {
+                        if (media.getMedia().getPrice() > 100) {
+                            filteredItems.add(media);
+                        }
+                    }
+                    Collections.sort(filteredItems, Comparator.comparingDouble(
+                            mediax -> ((MediaHandler) mediax).getMedia().getPrice()));
                 }
             });
 
-            // fill out the home with filted media as category
-            addMediaHome(filteredItems);
+            // fill out the home with filted media as category or price
+            if (filteredItems.isEmpty()) {
+                try {
+                    PopupScreen.error("Couldn't find any products!");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            } else {
+                // fill out the home with filtered media as a category
+                currentPage = 0;
+                this.displayedItems = filteredItems;
+                List<MediaHandler> displayedItems = updateMediaDisplay(filteredItems);
+                addMediaHome(displayedItems);
+
+            }
         });
         menuButton.getItems().add(position, menuItem);
+    }
+
+    @FXML
+    private void searchButtonClicked(MouseEvent event) {
+        String searchText = searchField.getText().toLowerCase().trim();
+        // Filter by productname
+        List<MediaHandler> filteredItems = new ArrayList<>();
+        for (Object item : homeItems) {
+            MediaHandler media = (MediaHandler) item;
+            if (media.getMedia().getTitle().toLowerCase().contains(searchText)) {
+                filteredItems.add(media);
+            }
+        }
+        if (filteredItems.isEmpty()) {
+            try {
+                PopupScreen.error("Couldn't find any products!");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } else {
+            // fill out the home with filtered media as a category
+            currentPage = 0;
+            this.displayedItems = filteredItems;
+            List<MediaHandler> displayedItems = updateMediaDisplay(filteredItems);
+            addMediaHome(displayedItems);
+        }
     }
 
 }

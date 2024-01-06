@@ -11,10 +11,10 @@
     <orderEntry type="library" name="lib2" level="project" />
     <orderEntry type="library" name="lib1" level="project" />
     <orderEntry type="library" name="sqlite-jdbc-3.7.2" level="project" />
-    <orderEntry type="library" exported="" name="mockito.all" level="project" />
-    <orderEntry type="library" name="junit.jupiter.api" level="project" />
+    <orderEntry type="library" name="mockito.all" level="project" />
+    <orderEntry type="library" exported="" name="junit.jupiter.api" level="project" />
     <orderEntry type="library" name="powermock.api.mockito" level="project" />
-    <orderEntry type="module-library" scope="TEST">
+    <orderEntry type="module-library" exported="" scope="TEST">
       <library name="JUnit4">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/junit-4.13.1.jar!/" />
@@ -24,5 +24,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mockito.core" level="application" />
+    <orderEntry type="library" exported="" name="powermock.api.mockito2" level="project" />
   </component>
 </module>

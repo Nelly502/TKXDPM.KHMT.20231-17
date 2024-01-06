@@ -1,6 +1,6 @@
 <component name="libraryTable">
   <library name="powermock.api.mockito" type="repository">
-    <properties maven-id="org.powermock:powermock-api-mockito:1.7.4" />
+    <properties maven-id="org.powermock:powermock-api-mockito:LATEST" />
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/powermock-api-mockito-1.7.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/powermock-api-mockito-common-1.7.4.jar!/" />
