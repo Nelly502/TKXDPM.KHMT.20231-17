@@ -122,7 +122,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
 
         int totalPages = (int) Math.ceil((double) Items.size() / itemsPerPage);
         int currentDisplayPage = currentPage + 1;
-        pageLabel.setText(currentDisplayPage + " / " + totalPages);
+        pageLabel.setText("       " + currentDisplayPage + " / " + totalPages);
         return displayedItems;
     }
     /**
