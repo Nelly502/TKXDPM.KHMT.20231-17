@@ -35,6 +35,10 @@ public class Configs {
     public static final String DELIVERY_METHODS_PATH = "/views/fxml/delivery_methods_form.fxml";
     public static final int PLACE_RUSH_ORDER = 1;
     public static final int PALCE_ORDER = 2;
+    public static final String MEDIA_MANAGE_SCREEN_PATH = "/views/fxml/media_manage.fxml";
+    public static final String BOOK_SCREEN_PATH = "/views/fxml/media_book.fxml";
+    public static final String DVD_SCREEN_PATH = "/views/fxml/media_dvd.fxml";
+    public static final String CD_SCREEN_PATH = "/views/fxml/media_cd.fxml";
     public static String CURRENCY = "VND";
     public static float PERCENT_VAT = 10;
     public static Font REGULAR_FONT = Font.font("Segoe UI", FontWeight.NORMAL, FontPosture.REGULAR, 24);
