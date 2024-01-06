@@ -65,40 +65,7 @@ public class PaymentController extends BaseController {
      * @throws TransactionNotDoneException - if the string does not represent a valid date
      *                                     in the expected format
      */
-//  private String getExpirationDate(String date) throws TransactionNotDoneException {
-//    String[] strs = date.split("/");
-//    if (strs.length != 2) {
-//      throw new TransactionNotDoneException();
-//    }
-//
-//    String expirationDate = null;
-//    int month = -1;
-//    int year = -1;
-//
-//    try {
-//      month = Integer.parseInt(strs[0]);
-//      year = Integer.parseInt(strs[1]);
-//      if (month < 1 || month > 12 || year < Calendar.getInstance().get(Calendar.YEAR) % 100 || year > 100) {
-//        throw new TransactionNotDoneException();
-//      }
-//      expirationDate = strs[0] + strs[1];
-//
-//    } catch (Exception ex) {
-//      throw new TransactionNotDoneException();
-//    }
-//
-//    return expirationDate;
-//  }
-//
-//  /**
-//   * Pay order, and then return the result with a message.
-//   *
-//   * @param amount         - the amount to pay
-//   * @param contents       - the transaction contents
-//
-//   * @return {@link java.util.Map Map} represent the payment result with a
-//   *         message.
-//   */
+
 
     public Map<String, String> makePayment(Map<String, String> res, int orderId) {
         Map<String, String> result = new Hashtable<String, String>();

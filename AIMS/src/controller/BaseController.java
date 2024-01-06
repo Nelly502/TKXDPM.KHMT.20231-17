@@ -6,13 +6,6 @@ import entity.media.Media;
 
 import java.util.List;
 
-
-/**
- * This class is the base controller for our AIMS project.
- *
- * @author nguyenlm
- */
-
 /**
  * Vi phạm Single Responsibility Principle SRP
  * Lớp BaseController thực hiện nhiều nhiệm vụ, bao gồm việc kiểm tra và
