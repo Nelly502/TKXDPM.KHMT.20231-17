@@ -96,10 +96,10 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
 
     @FXML
     private void showNextPage(MouseEvent event) {
-        int startIndex = currentPage * itemsPerPage;
-        int endIndex = Math.min(startIndex + itemsPerPage, displayedItems.size());
+        int start = currentPage * itemsPerPage;
+        int end = Math.min(start + itemsPerPage, displayedItems.size());
 
-        if (endIndex < displayedItems.size()) {
+        if (end < displayedItems.size()) {
             currentPage++;
             List<MediaHandler> displayedItems = updateMediaDisplay(this.displayedItems);
             addMediaHome(displayedItems);
@@ -116,9 +116,9 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     }
 
     private List<MediaHandler> updateMediaDisplay( List Items) {
-        int startIndex = currentPage * itemsPerPage;
-        int endIndex = Math.min(startIndex + itemsPerPage, Items.size());
-        List<MediaHandler> displayedItems = new ArrayList<>(Items.subList(startIndex, endIndex));
+        int start = currentPage * itemsPerPage;
+        int end = Math.min(start + itemsPerPage, Items.size());
+        List<MediaHandler> displayedItems = new ArrayList<>(Items.subList(start, end));
 
         int totalPages = (int) Math.ceil((double) Items.size() / itemsPerPage);
         int currentDisplayPage = currentPage + 1;
