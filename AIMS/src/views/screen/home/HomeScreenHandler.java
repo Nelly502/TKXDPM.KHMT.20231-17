@@ -3,6 +3,7 @@ package views.screen.home;
 import common.exception.ViewCartException;
 import controller.HomeController;
 import controller.BaseController;
+import controller.MediaController;
 import controller.ViewCartController;
 import entity.cart.Cart;
 import entity.media.Media;
@@ -20,6 +21,7 @@ import utils.Configs;
 import utils.Utils;
 import views.screen.BaseScreenHandler;
 import views.screen.cart.CartScreenHandler;
+import views.screen.manage.media.MediaManageScreenHandler;
 import views.screen.popup.PopupScreen;
 
 import java.io.File;
@@ -170,6 +172,18 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         addMenuItem(4, "10k đ-50k đ", splitMenuBtnSearch);
         addMenuItem(5, "50k đ-100k đ", splitMenuBtnSearch);
         addMenuItem(6, ">100k đ", splitMenuBtnSearch);
+
+        aimsImage.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
+            MediaManageScreenHandler mediaManageScreen;
+            try {
+                mediaManageScreen = new MediaManageScreenHandler(this.stage, Configs.MEDIA_MANAGE_SCREEN_PATH);
+                mediaManageScreen.setHomeScreenHandler(this);
+                mediaManageScreen.setBController(new MediaController());
+                mediaManageScreen.show();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
     }
 
     public void setImage() {
