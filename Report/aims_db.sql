@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 06, 2024 at 11:57 AM
+-- Generation Time: Jan 07, 2024 at 10:30 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,12 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `book` (
   `id` int(11) NOT NULL,
-  `authors` varchar(45) NOT NULL,
+  `author` varchar(45) NOT NULL,
   `publisher` varchar(45) NOT NULL,
   `language` varchar(45) NOT NULL,
-  `type` varchar(45) NOT NULL,
-  `cover` varchar(45) NOT NULL,
-  `page` int(11) NOT NULL,
+  `bookCategory` varchar(45) NOT NULL,
+  `coverType` varchar(45) NOT NULL,
+  `numberOfPages` int(11) NOT NULL,
   `publishDate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -74,7 +74,6 @@ CREATE TABLE `cd` (
   `id` int(11) NOT NULL,
   `type` varchar(45) NOT NULL,
   `artist` varchar(45) NOT NULL,
-  `tracklist` varchar(45) NOT NULL,
   `dateRelease` datetime NOT NULL,
   `recordLabel` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -136,9 +135,8 @@ CREATE TABLE `invoice` (
 
 CREATE TABLE `lp` (
   `id` int(11) NOT NULL,
-  `type` varchar(45) NOT NULL,
+  `musicType` varchar(45) NOT NULL,
   `artist` varchar(45) NOT NULL,
-  `tracklist` varchar(45) NOT NULL,
   `dateRelease` datetime NOT NULL,
   `recordLabel` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
