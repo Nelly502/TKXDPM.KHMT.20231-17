@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="1326.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ScrollPane hbarPolicy="NEVER" layoutX="-12.0" prefHeight="788.0" prefWidth="1326.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <content>
+                <HBox alignment="TOP_CENTER" prefHeight="472.0" prefWidth="1326.0">
+                    <children>
+                        <VBox fx:id="form" alignment="TOP_CENTER" prefHeight="472.0" prefWidth="663.0" spacing="12.0">
+                            <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                                      <Label fx:id="formTitle" alignment="CENTER" contentDisplay="CENTER" text="LABEL" textAlignment="CENTER" textFill="#5091e6">
+                                          <font>
+                                              <Font name="System Bold" size="25.0" />
+                                          </font>
+                                      </Label>
+                           </children>
+                        </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Title">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="titleField" prefHeight="46.0" prefWidth="722.0" promptText="Enter title">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Category">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="categoryField" prefHeight="46.0" prefWidth="722.0" promptText="Enter category">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Price">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="priceField" prefHeight="46.0" prefWidth="722.0" promptText="Enter price">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Quantity">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="quantityField" prefHeight="46.0" prefWidth="722.0" promptText="Enter quantity">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Image">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="uploadButton" mnemonicParsing="false" prefHeight="49.0" prefWidth="722.0" text="Upload Image">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Author">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="authorField" prefHeight="46.0" prefWidth="722.0" promptText="Enter author">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Cover type">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="coverTypeField" prefHeight="46.0" prefWidth="722.0" promptText="Enter cover type">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Publisher">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="publisherField" prefHeight="46.0" prefWidth="722.0" promptText="Enter publisher">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Publish date">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+
+                                        <DatePicker fx:id="publishDateField" prefHeight="46.0" prefWidth="690.0" />
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Number of pages">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="numOfPagesField" prefHeight="46.0" prefWidth="722.0" promptText="Enter number of pages">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Language">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="languageField" prefHeight="46.0" prefWidth="722.0" promptText="Enter language">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Book category">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="bookCategoryField" prefHeight="46.0" prefWidth="722.0" promptText="Enter book category">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </VBox>
+                                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-padding: 0 0 24px;">
+                                    <children>
+                                        <Button fx:id="cancelButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="199.0" text="Cancel">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="saveButton" prefHeight="26.0" prefWidth="197.0" text="Save">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

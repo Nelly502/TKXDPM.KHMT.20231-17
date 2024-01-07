@@ -50,8 +50,14 @@ public class CartScreenHandler extends BaseScreenHandler {
     @FXML
     private Button btnPlaceOrder;
 
+    private MediaHandler mediaHandler;
+
+    private List<CartMedia> selectedCartMediaList;
+
     public CartScreenHandler(Stage stage, String screenPath) throws IOException {
         super(stage, screenPath);
+
+        mediaHandler = new MediaHandler(Configs.CART_MEDIA_PATH, this);
 
         // fix relative image path caused by fxml
         File file = new File("assets/images/Logo.png");
@@ -67,7 +73,7 @@ public class CartScreenHandler extends BaseScreenHandler {
         btnPlaceOrder.setOnMouseClicked(e -> {
 
             try {
-                requestOrder();
+                requestToPlaceOrder();
             } catch (SQLException | IOException exp) {
 
                 exp.printStackTrace();
@@ -114,30 +120,43 @@ public class CartScreenHandler extends BaseScreenHandler {
         show();
     }
 
-
     /**
      * @throws SQLException
      * @throws IOException
      */
-    public void requestOrder() throws SQLException, IOException {
+
+    public void requestToPlaceOrder() throws SQLException, IOException {
         try {
             // create placeOrderController and process the order
             var placeOrderController = new PlaceOrderController();
-            if (placeOrderController.getListCartMedia().size() == 0) {
-                PopupScreen.error("You don't have anything to place");
+
+            boolean hasSelectedProduct = false;
+
+            for (CartMedia cartMedia : (List<CartMedia>) placeOrderController.getListCartMedia()) {
+                if (cartMedia.isSelected()) {
+                    hasSelectedProduct = true;
+                    break;
+                }
+            }
+
+
+            if (!hasSelectedProduct) {
+                PopupScreen.error("You don't have anything selected to place");
                 return;
             }
 
             placeOrderController.placeOrder();
 
             // display available media
-//            displayCartWithMediaAvailability();
+            // displayCartWithMediaAvailability();
 
             // create order
             Order order = placeOrderController.createOrder();
 
             // display shipping form
             ShippingScreenHandler ShippingScreenHandler = new ShippingScreenHandler(this.stage, Configs.SHIPPING_SCREEN_PATH, order);
+
+//            ShippingScreenHandler ShippingScreenHandler = new ShippingScreenHandler(this.stage, Configs.SHIPPING_SCREEN_PATH, order,this, mediaHandler.getSelectedCartMediaList());
             ShippingScreenHandler.setPreviousScreen(this);
             ShippingScreenHandler.setHomeScreenHandler(homeScreenHandler);
             ShippingScreenHandler.setScreenTitle("Shipping Screen");
@@ -160,13 +179,18 @@ public class CartScreenHandler extends BaseScreenHandler {
     }
 
     void updateCartAmount() {
-        // calculate subtotal and amount
-        int subtotal = getBController().getCartSubtotal();
+        int subtotal = 0;
+        List lstMedia = getBController().getListCartMedia();
+        for (Object cm : lstMedia) {
+            CartMedia cartMedia = (CartMedia) cm;
+            if (cartMedia.isSelected()) {
+                subtotal += cartMedia.getQuantity() * cartMedia.getPrice();
+            }
+        }
+
         int vat = (int) ((Configs.PERCENT_VAT / 100) * subtotal);
         int amount = subtotal + vat;
 
-
-        // update subtotal and amount of Cart
         labelSubtotal.setText(Utils.getCurrencyFormat(subtotal));
         labelVAT.setText(Utils.getCurrencyFormat(vat));
         labelAmount.setText(Utils.getCurrencyFormat(amount));
@@ -192,8 +216,25 @@ public class CartScreenHandler extends BaseScreenHandler {
             }
             // calculate subtotal and amount
             updateCartAmount();
+            LOGGER.info("updateCartAmount called"); // Thêm dòng này để kiểm tra
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void initialize() throws IOException {
+        // Khởi tạo MediaHandler một lần và sử dụng nó ở đây
+//        mediaHandler = new MediaHandler(Configs.CART_MEDIA_PATH, this);
+    }
+
+    public MediaHandler getMediaHandler() {
+        return mediaHandler;
+    }
+
+    public List<CartMedia> getSelectedCartMediaList() {
+        LOGGER.info("Selected Cart Media List Size (in CartScreenHandler): " + selectedCartMediaList.size());
+        return selectedCartMediaList;
+    }
+
 }
