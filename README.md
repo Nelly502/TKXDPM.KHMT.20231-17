@@ -217,8 +217,9 @@ Comment coupling in
     - Find solid in class Entity: order, payment, media, shipping
 
 </details>
----
+
 </details>
+---
 
 <details>
   <summary>W16-W18: 18/12/2023~06/01/2024 </summary>
